@@ -64,7 +64,6 @@ static void BtnMsg(int btn, const char *msg) {
 }
 
 void APP_EventHandler(EVNT_Handle event) {
-	byte Values[2];
 	uint16_t i;
   /*! \todo handle events */
   switch(event) {
@@ -79,10 +78,21 @@ void APP_EventHandler(EVNT_Handle event) {
 	  break;
 
   case EVNT_PWM_CHANGE:
-
 	  (void)AD1_Measure(TRUE);  // measure all channel, wait for result
-	  (void)AD1_GetValue16(&i);	   // Get AD conversion results
-	  PWM1_SetDutyMS(i/650);
+	  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PWM_SET,&i);	   // Get AD conversion results
+	  PWM1_SetDutyMS(i/650);	// Set PWM Heating to reed value
+	  break;
+  case EVNT_PT100_SENSOR1_READ:
+	  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PT100_1,&i);
+	  break;
+  case EVNT_PT100_SENSOR2_READ:
+	  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PT100_2,&i);
+	  break;
+  case EVNT_PT100_SENSOR3_READ:
+	  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PT100_3,&i);
+	  break;
+  case EVNT_PT100_SENSOR4_READ:
+	  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PT100_4,&i);
 	  break;
 
 #if PL_CONFIG_NOF_KEYS>=1
@@ -95,6 +105,7 @@ void APP_EventHandler(EVNT_Handle event) {
    } /* switch */
 }
 #endif /* PL_CONFIG_HAS_EVENTS */
+
 
 
 
