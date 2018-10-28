@@ -10,6 +10,7 @@
 #include "Application.h"
 #include "Event.h"
 #include	"AD1.h"
+#include	"PWM1.h"
 /*#include "LED.h"
 #include "WAIT1.h"
 #include "CS1.h"
@@ -64,6 +65,7 @@ static void BtnMsg(int btn, const char *msg) {
 
 void APP_EventHandler(EVNT_Handle event) {
 	byte Values[2];
+	uint16_t i;
   /*! \todo handle events */
   switch(event) {
   case EVNT_STARTUP:
@@ -77,10 +79,10 @@ void APP_EventHandler(EVNT_Handle event) {
 	  break;
 
   case EVNT_PWM_CHANGE:
-	  AD1_Measure(FALSE);  // measure all channel, not wait for result
-	  while (AD1_GetValue16((byte *)Values) == ERR_NOTAVAIL);  // Wait for result
-	  AD1_Measure(TRUE);  // measure all channel, wait for result
-	//  PWM1(AD1_GetValue16();  // Get AD conversion results
+
+	  (void)AD1_Measure(TRUE);  // measure all channel, wait for result
+	  (void)AD1_GetValue16(&i);	   // Get AD conversion results
+	  PWM1_SetDutyMS(i/650);
 	  break;
 
 #if PL_CONFIG_NOF_KEYS>=1
@@ -103,10 +105,8 @@ void APP_Start(void) {
   __asm volatile("cpsie i"); /* enable interrupts */
   EVNT_SetEvent(EVNT_STARTUP);
 
-
   for(;;) {
 	  EVNT_HandleEvent(APP_EventHandler,TRUE);
-
 	//  WAIT1_Waitms(10);
   }
 }

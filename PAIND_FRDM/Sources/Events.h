@@ -40,6 +40,9 @@
 #include "TI1.h"
 #include "TimerIntLdd1.h"
 #include "TU1.h"
+#include "PWM1.h"
+#include "PwmLdd1.h"
+#include "TU2.h"
 
 #ifdef __cplusplus
 extern "C" {
