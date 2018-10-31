@@ -36,7 +36,7 @@ extern "C" {
 
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
-
+#include "Application.h"
 /*
 ** ===================================================================
 **     Event       :  Cpu_OnNMIINT (module Events)
@@ -72,6 +72,53 @@ void Cpu_OnNMIINT(void)
 void TI1_OnInterrupt(void)
 {
   EVNT_SetEvent(EVNT_PWM_CHANGE);
+}
+
+/*
+** ===================================================================
+**     Event       :  AS1_OnBlockReceived (module Events)
+**
+**     Component   :  AS1 [Serial_LDD]
+*/
+/*!
+**     @brief
+**         This event is called when the requested number of data is
+**         moved to the input buffer.
+**     @param
+**         UserDataPtr     - Pointer to the user or
+**                           RTOS specific data. This pointer is passed
+**                           as the parameter of Init method.
+*/
+/* ===================================================================*/
+void AS1_OnBlockReceived(LDD_TUserData *UserDataPtr)
+{
+	UART_Desc *ptr = (UART_Desc*)UserDataPtr;
+
+	(void)ptr->rxPutFct(ptr->rxChar); /* but received character into buffer */
+	(void)AS1_ReceiveBlock(ptr->handle, (LDD_TData *)&ptr->rxChar, sizeof(ptr->rxChar));
+}
+
+/*
+** ===================================================================
+**     Event       :  AS1_OnBlockSent (module Events)
+**
+**     Component   :  AS1 [Serial_LDD]
+*/
+/*!
+**     @brief
+**         This event is called after the last character from the
+**         output buffer is moved to the transmitter. 
+**     @param
+**         UserDataPtr     - Pointer to the user or
+**                           RTOS specific data. This pointer is passed
+**                           as the parameter of Init method.
+*/
+/* ===================================================================*/
+void AS1_OnBlockSent(LDD_TUserData *UserDataPtr)
+{
+	UART_Desc *ptr = (UART_Desc*)UserDataPtr;
+
+	ptr->isSent = TRUE; /* set flag so sender knows we have finished */
 }
 
 /* END Events */

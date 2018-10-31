@@ -11,6 +11,8 @@
 #include "Event.h"
 #include	"AD1.h"
 #include	"PWM1.h"
+#include "RxBuf.h"
+#include "AS1.h"
 /*#include "LED.h"
 #include "WAIT1.h"
 #include "CS1.h"
@@ -63,6 +65,33 @@ static void BtnMsg(int btn, const char *msg) {
 #endif
 }
 
+
+static UART_Desc deviceData;
+
+static void SendChar(unsigned char ch, UART_Desc *desc) {
+  desc->isSent = FALSE;  /* this will be set to 1 once the block has been sent */
+  while(AS1_SendBlock(desc->handle, (LDD_TData*)&ch, 1)!=ERR_OK) {} /* Send char */
+  while(!desc->isSent) {} /* wait until we get the green flag from the TX interrupt */
+}
+
+static void SendString(const unsigned char *str,  UART_Desc *desc) {
+  while(*str!='\0') {
+    SendChar(*str++, desc);
+  }
+}
+
+static void Init(void) {
+  /* initialize struct fields */
+  deviceData.handle = AS1_Init(&deviceData);
+  deviceData.isSent = FALSE;
+  deviceData.rxChar = '\0';
+  deviceData.rxPutFct = RxBuf_Put;
+  /* set up to receive RX into input buffer */
+  RxBuf_Init(); /* initialize RX buffer */
+  /* Set up ReceiveBlock() with a single byte buffer. We will be called in OnBlockReceived() event. */
+  while(AS1_ReceiveBlock(deviceData.handle, (LDD_TData *)&deviceData.rxChar, sizeof(deviceData.rxChar))!=ERR_OK) {} /* initial kick off for receiving data */
+}
+
 void APP_EventHandler(EVNT_Handle event) {
 	uint16_t i;
   /*! \todo handle events */
@@ -80,7 +109,10 @@ void APP_EventHandler(EVNT_Handle event) {
   case EVNT_PWM_CHANGE:
 	  (void)AD1_Measure(TRUE);  // measure all channel, wait for result
 	  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PWM_SET,&i);	   // Get AD conversion results
-	  PWM1_SetDutyMS(i/650);	// Set PWM Heating to reed value
+	  PWM1_SetDutyMS(i/1300);	// Set PWM Heating to reed value
+	  SendString((unsigned char*)"PWM:\t", &deviceData);
+	  printUInt16(i/650);
+
 	  break;
   case EVNT_PT100_SENSOR1_READ:
 	  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PT100_1,&i);
@@ -106,7 +138,24 @@ void APP_EventHandler(EVNT_Handle event) {
 }
 #endif /* PL_CONFIG_HAS_EVENTS */
 
+void printUInt16(uint16_t i){
+	for(int n=4;n>=0;n--){
+			  uint8_t cnt=0;
+			  uint16_t ex = 1;
+			  for (int l=n;l>0;l--){
+				  ex=ex*10;
+			  }
+			  while(i>=ex){
+				  i=i-ex;
+				  cnt++;
+			  }
+			  if(cnt>0){
+				  SendChar((char)(cnt+'0'), &deviceData);
+			  }
+		  }
+		  SendString((unsigned char*)"\r\n", &deviceData);
 
+}
 
 
 
@@ -116,7 +165,12 @@ void APP_Start(void) {
   __asm volatile("cpsie i"); /* enable interrupts */
   EVNT_SetEvent(EVNT_STARTUP);
 
+  Init();
+  SendString((unsigned char*)"Hello World\r\n", &deviceData);
+
+
   for(;;) {
+
 	  EVNT_HandleEvent(APP_EventHandler,TRUE);
 	//  WAIT1_Waitms(10);
   }

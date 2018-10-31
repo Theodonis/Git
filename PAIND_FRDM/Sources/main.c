@@ -40,6 +40,8 @@
 #include "PWM1.h"
 #include "PwmLdd1.h"
 #include "TU2.h"
+#include "AS1.h"
+#include "RxBuf.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
