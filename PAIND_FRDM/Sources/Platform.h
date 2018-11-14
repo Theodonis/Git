@@ -27,6 +27,12 @@
 #define	VL_ADC_CHANEL_PT100_3		(3)
 #define	VL_ADC_CHANEL_PT100_4		(4)
 
+typedef struct PT100_Temp {
+	int8_t degree;
+	int8_t dec;
+}PT100_Temp_t;
+
+
  /* \brief Driver de-initialization
  */
 void PL_Deinit(void);

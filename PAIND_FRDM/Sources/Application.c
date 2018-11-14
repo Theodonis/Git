@@ -13,6 +13,7 @@
 #include	"PWM1.h"
 #include "RxBuf.h"
 #include "AS1.h"
+#include "PT100.h"
 /*#include "LED.h"
 #include "WAIT1.h"
 #include "CS1.h"
@@ -109,13 +110,17 @@ void APP_EventHandler(EVNT_Handle event) {
   case EVNT_PWM_CHANGE:
 	  (void)AD1_Measure(TRUE);  // measure all channel, wait for result
 	  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PWM_SET,&i);	   // Get AD conversion results
-	  PWM1_SetDutyMS(i/1300);	// Set PWM Heating to reed value
+	  PWM1_SetDutyUS(i/6500);	// Set PWM Heating to reed value
 	  SendString((unsigned char*)"PWM:\t", &deviceData);
-	  printUInt16(i/650);
+	  printUInt16(i/6500);
 
 	  break;
   case EVNT_PT100_SENSOR1_READ:
 	  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PT100_1,&i);
+	  SendString((unsigned char*)"Temp1:\t", &deviceData);
+	  printTemp(getTemp(i));
+
+
 	  break;
   case EVNT_PT100_SENSOR2_READ:
 	  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PT100_2,&i);
@@ -140,8 +145,29 @@ void APP_EventHandler(EVNT_Handle event) {
 
 void printUInt16(uint16_t i){
 	for(int n=4;n>=0;n--){
+		  uint8_t cnt=0;
+		  uint16_t ex = 1;
+		  for (int l=n;l>0;l--){
+			  ex=ex*10;
+		  }
+		  while(i>=ex){
+			  i=i-ex;
+			  cnt++;
+		  }
+		  SendChar((char)(cnt+'0'), &deviceData);
+	}
+	SendString((unsigned char*)"\r\n", &deviceData);
+}
+void printTemp(PT100_Temp_t temp){
+	uint8_t i =temp.degree;
+	uint8_t	l = (i&&0x80)>>7;
+	if (l==1){
+		i = (i)+1;
+		SendChar((char)('-'), &deviceData);
+	}
+	for(int n=2;n>=0;n--){
 			  uint8_t cnt=0;
-			  uint16_t ex = 1;
+			  uint8_t ex = 1;
 			  for (int l=n;l>0;l--){
 				  ex=ex*10;
 			  }
@@ -149,13 +175,14 @@ void printUInt16(uint16_t i){
 				  i=i-ex;
 				  cnt++;
 			  }
-			  if(cnt>0){
-				  SendChar((char)(cnt+'0'), &deviceData);
-			  }
-		  }
-		  SendString((unsigned char*)"\r\n", &deviceData);
-
+			  SendChar((char)(cnt+'0'), &deviceData);
+	}
+	SendChar((char)('.'), &deviceData);
+	SendChar((char)(temp.dec+'0'), &deviceData);
+	SendString((unsigned char*)"\r\n", &deviceData);
 }
+
+
 
 
 

@@ -26,7 +26,7 @@ typedef struct {
 
 void APP_EventHandler(EVNT_Handle event);
 #endif
-
+uint16_t calcTemp(uint16_t i);
 void printUInt16(uint16_t i);
 void APP_Start(void);
 

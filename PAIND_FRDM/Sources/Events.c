@@ -72,6 +72,7 @@ void Cpu_OnNMIINT(void)
 void TI1_OnInterrupt(void)
 {
   EVNT_SetEvent(EVNT_PWM_CHANGE);
+  EVNT_SetEvent(EVNT_PT100_SENSOR1_READ);
 }
 
 /*
