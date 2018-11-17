@@ -29,5 +29,6 @@ void APP_EventHandler(EVNT_Handle event);
 uint16_t calcTemp(uint16_t i);
 void printUInt16(uint16_t i);
 void APP_Start(void);
+PT100_Temp_t mean(word* sensor);
 
 #endif /* SOURCES_FS2016_COMMON_APPLICATION_H_ */

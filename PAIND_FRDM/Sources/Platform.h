@@ -32,6 +32,8 @@ typedef struct PT100_Temp {
 	int8_t dec;
 }PT100_Temp_t;
 
+#define PL_CONFIG_MEANSIZE (5)
+
 
  /* \brief Driver de-initialization
  */

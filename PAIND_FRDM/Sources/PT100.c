@@ -31,7 +31,7 @@ PT100_Temp_t getTemp(uint16_t adc_value){
 	}
 	temp.degree = ZEROPOINT_OFFSET+i-1;
 	temp.dec	= 0;
-	i=array_ADC[i]-adc_value;
+	i=(array_ADC[i]-adc_value)*10;	//at 0°C with 16Bit ADC the deltha for 1K ist 21 ->2 =~ 0.05
 	for(uint8_t k=0;k<i;k+=2){
 		temp.dec++;
 	}

@@ -116,9 +116,9 @@ void APP_EventHandler(EVNT_Handle event) {
 
 	  break;
   case EVNT_PT100_SENSOR1_READ:
-	  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PT100_1,&i);
+	//  (void)AD1_GetChanValue16(VL_ADC_CHANEL_PT100_1,&i);
 	  SendString((unsigned char*)"Temp1:\t", &deviceData);
-	  printTemp(getTemp(i));
+	  printTemp(mean(VL_ADC_CHANEL_PT100_1));
 
 
 	  break;
@@ -178,11 +178,35 @@ void printTemp(PT100_Temp_t temp){
 			  SendChar((char)(cnt+'0'), &deviceData);
 	}
 	SendChar((char)('.'), &deviceData);
-	SendChar((char)(temp.dec+'0'), &deviceData);
+	i=temp.dec;
+	for(int n=1;n>=0;n--){
+				  uint8_t cnt=0;
+				  uint8_t ex = 1;
+				  for (int l=n;l>0;l--){
+					  ex=ex*10;
+				  }
+				  while(i>=ex){
+					  i=i-ex;
+					  cnt++;
+				  }
+				  SendChar((char)(cnt+'0'), &deviceData);
+		}
 	SendString((unsigned char*)"\r\n", &deviceData);
 }
 
+PT100_Temp_t mean(word* sensor){
+	PT100_Temp_t temp;
+	uint16_t 	mean=0;
+	uint16_t	adc_value;
 
+	for(uint8_t l=0; l<PL_CONFIG_MEANSIZE;l++){
+		(void)AD1_GetChanValue16(sensor,&adc_value);
+		temp	=	getTemp(adc_value);
+		mean	+=	temp.degree;
+	}
+	temp.degree	=	mean/PL_CONFIG_MEANSIZE;
+	return temp;
+}
 
 
 
