@@ -31,36 +31,36 @@
 
 #if PL_CONFIG_HAS_SHT71
 static float temperature, humidity;
-static SemaphoreHandle_t sht71sem;
+static SemaphoreHandle_t sensorsem;
 
 float SENSOR_GetTemperature(void) {
   float val;
 
-  (void)xSemaphoreTakeRecursive(sht71sem, portMAX_DELAY);
+  (void)xSemaphoreTakeRecursive(sensorsem, portMAX_DELAY);
   val = temperature;
-  (void)xSemaphoreGiveRecursive(sht71sem);
+  (void)xSemaphoreGiveRecursive(sensorsem);
   return val;
 }
 
 float SENSOR_GetHumidity(void) {
   float val;
 
-  (void)xSemaphoreTakeRecursive(sht71sem, portMAX_DELAY);
+  (void)xSemaphoreTakeRecursive(sensorsem, portMAX_DELAY);
   val = humidity;
-  (void)xSemaphoreGiveRecursive(sht71sem);
+  (void)xSemaphoreGiveRecursive(sensorsem);
   return val;
 }
 
 static void SENSOR_SetHumidity(float h) {
-  (void)xSemaphoreTakeRecursive(sht71sem, portMAX_DELAY);
+  (void)xSemaphoreTakeRecursive(sensorsem, portMAX_DELAY);
   humidity = h;
-  (void)xSemaphoreGiveRecursive(sht71sem);
+  (void)xSemaphoreGiveRecursive(sensorsem);
 }
 
 static void SENSOR_SetTemperature(float t) {
-  (void)xSemaphoreTakeRecursive(sht71sem, portMAX_DELAY);
+  (void)xSemaphoreTakeRecursive(sensorsem, portMAX_DELAY);
   temperature = t;
-  (void)xSemaphoreGiveRecursive(sht71sem);
+  (void)xSemaphoreGiveRecursive(sensorsem);
 }
 
 static void SHT71Task(void *pv) {
@@ -81,7 +81,7 @@ static void SHT71Task(void *pv) {
 }
 #endif
 
-#if SENS_CONFIG_PARSE_COMMAND_ENABLED
+#if SENSOR_CONFIG_PARSE_COMMAND_ENABLED
 static uint8_t PrintStatus(const CLS1_StdIOType *io) {
   uint8_t buf[32];
 
@@ -104,9 +104,9 @@ static uint8_t PrintHelp(const CLS1_StdIOType *io) {
   CLS1_SendHelpStr((unsigned char*)"  help|status", (unsigned char*)"Print help or status information\r\n", io->stdOut);
   return ERR_OK;
 }
-#endif /* SHT31_CONFIG_PARSE_COMMAND_ENABLED */
+#endif /* SENSOR_CONFIG_PARSE_COMMAND_ENABLED */
 
-#if SENS_CONFIG_PARSE_COMMAND_ENABLED
+#if SENSOR_CONFIG_PARSE_COMMAND_ENABLED
 uint8_t SENSOR_ParseCommand(const unsigned char* cmd, bool *handled, const CLS1_StdIOType *io) {
   uint8_t res = ERR_OK;
 
@@ -247,10 +247,10 @@ void SENSOR_Init(void) {
     for(;;){}; /* error! probably out of memory */
     /*lint +e527 */
   }
-  sht71sem = xSemaphoreCreateRecursiveMutex();
-  if (sht71sem==NULL) { /* creation failed? */
+  sensorsem = xSemaphoreCreateRecursiveMutex();
+  if (sensorsem==NULL) { /* creation failed? */
     for(;;);
   }
-  vQueueAddToRegistry(sht71sem, "sht71Sem");
+  vQueueAddToRegistry(sensorsem, "sensorsem");
 #endif
 }

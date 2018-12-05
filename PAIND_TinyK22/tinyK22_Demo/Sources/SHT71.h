@@ -7,6 +7,7 @@
 
 #ifndef SOURCES_SHT71_H_
 #define SOURCES_SHT71_H_
+#include "UTIL1.h"
 
 
 #define SHT71_CONFIG_PARSE_COMMAND_ENABLED (0)
@@ -21,5 +22,6 @@
 
 
 void SHT71_Init(void);
+uint8_t SHT71_ReadTempHum(float *temperature,float *humidity);
 
 #endif /* SOURCES_SHT71_H_ */

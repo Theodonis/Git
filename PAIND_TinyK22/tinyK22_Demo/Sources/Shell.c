@@ -28,6 +28,7 @@ static const CLS1_ParseCommandCallback CmdParserTable[] =
   KIN1_ParseCommand,
   TmDt1_ParseCommand,
   SENSOR_ParseCommand,
+  APP_ParseCommand,
   NULL /* sentinel */
 };
 
