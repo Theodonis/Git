@@ -15,6 +15,10 @@
 #include "UTIL1.h"
 #include "TmDt1.h"
 #include "CLS1.h"
+#include "Sensor.h"
+#if PL_CONFIG_HAS_PT100
+#include "PT100.h"
+#endif
 
 #define LOGGER_PERIOD_MS   1000         /* period between logs */
 #define LOGGER_FILE_NAME   "./log.txt"  /* data log file name */
@@ -104,7 +108,7 @@ static void logger_task(void *param) {
       fp = &file;
     }
     LED1_Neg();
-    LogToFile(fp, 1,2,3);
+    LogToFile(fp, SENSOR_GetHumidity(),SENSOR_GetTemperature(),0);
     vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(LOGGER_PERIOD_MS));
   } /* for */
 }

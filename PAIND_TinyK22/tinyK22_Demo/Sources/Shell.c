@@ -14,6 +14,8 @@
 #include "FAT1.h"
 #include "TmDt1.h"
 #include "KIN1.h"
+#include "SHT71.h"
+#include "Sensor.h"
 #if PL_CONFIG_HAS_EXTRA_SEGGER_RTT
   #include "RTT1.h"
 #endif
@@ -25,6 +27,7 @@ static const CLS1_ParseCommandCallback CmdParserTable[] =
   FAT1_ParseCommand,
   KIN1_ParseCommand,
   TmDt1_ParseCommand,
+  SENSOR_ParseCommand,
   NULL /* sentinel */
 };
 

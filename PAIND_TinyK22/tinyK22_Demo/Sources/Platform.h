@@ -14,4 +14,10 @@
 #define PL_CONFIG_HAS_EXTRA_SEGGER_RTT  0 /* extra channel for RTT */
 #define PL_CONFIG_HAS_LOGGER            1
 
+#define PL_CONFIG_HAS_PT100				(1)
+#define	PL_CONFIG_HAS_PWM_CHANGE		(1)
+
+#define PL_CONFIG_HAS_SHT71				(1)
+
+
 #endif /* SOURCES_PLATFORM_H_ */

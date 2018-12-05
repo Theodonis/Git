@@ -21,6 +21,7 @@
 #define	PL_CONFIG_HAS_SHELL_QUEUE	(0)
 #define PL_CONFIG_HAS_SEMAPHORE		(0)
 
+
 #define	VL_ADC_CHANEL_PWM_SET		(0)
 #define	VL_ADC_CHANEL_PT100_1		(1)
 #define	VL_ADC_CHANEL_PT100_2		(2)
