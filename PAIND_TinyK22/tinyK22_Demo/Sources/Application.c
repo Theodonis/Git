@@ -124,23 +124,15 @@ void APP_setDutyPWM(uint16_t duty){
 
 #endif
 static void application_task(void* pvParameter){
-	uint16_t i;
+	uint16_t waitintime;
 
 	for(;;){
-		#if PL_CONFIG_HAS_PWM_CHANGE
-		 (void)AD1_Measure(TRUE);  									// measure all channel, wait for result
-		 (void)AD1_GetChanValue16(0,&i);	  	// Get AD conversion results
-		#else
-		 i=APP_DEFAULT_HEATING_PWM;
-		#endif
-
-
-		 PWM1_SetDutyUS(i/6500);									// Set PWM Duty for Heating to measured value in
-		// SendString((unsigned char*)"PWM:\t", &deviceData);		// hear should be written to a queue, from which the Logger task can read
-		// printUInt16(i/6500);
-		 vTaskDelay(pdMS_TO_TICKS(APP_HEATING_TIME));
-		 PWM1_SetDutyUS(APP_DEFAULT_HEATING_PWM);
-		 vTaskDelay(pdMS_TO_TICKS(APP_DONTHEATING_TIME));
+		if(APP_getHeatingState()==APP_HEATING_ON){
+			 PWM1_SetDutyUS(APP_getDutyPWM());
+			 vTaskDelay(pdMS_TO_TICKS((uint16_t)APP_getHeatingTime()*1000));
+		};
+		 PWM1_SetDutyUS(0);
+		 vTaskDelay(pdMS_TO_TICKS((uint16_t)APP_getDontHeatingTime()*1000));
 	}
 }
 

@@ -15,8 +15,6 @@
 #define PL_CONFIG_HAS_LOGGER            1
 
 #define PL_CONFIG_HAS_PT100				(1)
-#define	PL_CONFIG_HAS_PWM_CHANGE		(1)
-
 #define PL_CONFIG_HAS_SHT71				(1)
 
 
