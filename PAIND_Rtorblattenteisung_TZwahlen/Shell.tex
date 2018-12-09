@@ -1,0 +1,63 @@
+CLS1                      ; Group of CLS1 commands
+  help|status             ; Print help or status information
+FRTOS1                    ; Group of FRTOS1 commands
+  help|status             ; Print help or status information
+  tasklist                ; Print tasklist
+FAT1                      ; Group of FAT1 commands
+  help|status             ; Print help or status information
+  cd [<directoryName>]    ; Change the current directory or display the name of the current directory
+  dir [<directoryName>]   ; Prints a directory
+  copy <src> <dst>        ; Copy a file
+  delete <filename>       ; Delete a file
+  create <filename>       ; Create a file
+  mkdir <directory>       ; Create a directory
+  rename <src> <dst>      ; Rename a file
+  print <filename>        ; Print a file
+  printhex <filename>     ; Print a file as hexdump
+  printsector <number>    ; Print disk sector
+  diskinfo                ; Print disk information
+  benchmark               ; Run disk benchmark
+KIN1                      ; Group of KIN1 commands
+  reset                   ; Performs a software reset
+  help|status             ; Print help or status information
+TmDt1                     ; Group of TmDt1 commands
+  help|status             ; Print help or status information
+  time [hh:mm:ss[,z]]     ; Set the current time. Prints the current time if no argument
+  date [dd.mm.yyyy]       ; Set the current date. Prints the current date if no argument
+  dateToSec <datetime>    ; Convert date/time int UNIX timestamp (seconds after 1970)
+  secToDate <secs>        ; Convert UNIX timestamp to date/time
+Sensor                    ; Group of Sensor commands
+  help|status             ; Print help or status information
+APP                       ; Group of APP commands
+  help|status             ; Print help or status information
+  set PWM <number>        ; Set the PWM Duty from 0-1000
+  set on|off time <number>; set the time for heating or not periode in s
+  set heater on|off       ; Start or stop heater
+
+CMD> APP set PWM 700
+APP          : 
+  On time    : 1 s
+  Off time   : 5 s
+  PWMduty    : 700 ‰
+
+  Heater is  : OFF
+
+CMD> APP set heater on
+CMD> Sensor status
+Sensor       : 
+  temp       : 21.87°C
+  humidity   : 49.63 RH
+	
+CMD> APP set on time 3
+APP          : 
+  On time    : 3 s
+  Off time   : 5 s
+  PWMduty    : 700 ‰
+
+  Heater is  : ON
+
+
+	
+	
+
+

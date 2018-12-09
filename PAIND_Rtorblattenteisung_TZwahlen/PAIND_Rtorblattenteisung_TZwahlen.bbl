@@ -1,0 +1,63 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[GmbH()]{Aeroweb}
+Aeroscout GmbH.
+\newblock Aeroscout - unmanned aircraft technology.
+\newblock \url{https://www.aeroscout.ch/}.
+\newblock Online; zugegriffen 09 Dezember 2018.
+
+\bibitem[IPA()]{Frhofweb}
+Fraunhofer IPA.
+\newblock Cnt-flächenheizung.
+\newblock
+  \url{https://www.elektromobilitaet.fraunhofer.de/de/bauweisen_infrastruktur/cnt_flaechenheizung.html}.
+\newblock Online; zugegriffen 09 Dezember 2018.
+
+\bibitem[AG({\natexlab{a}})]{ForstRoweb}
+Forster~Rohner AG.
+\newblock Textile flÄchenheizstrukturen – sicher, flexibel, leistungsstark.
+\newblock \url{http://www.frti.ch/technologie/}, {\natexlab{a}}.
+\newblock Online; zugegriffen 09 Dezember 2018.
+
+\bibitem[Guide()]{AeroGuideweb}
+Aeronautics Guide.
+\newblock Wing anti-ice (wai) system.
+\newblock
+  \url{https://okigihan.blogspot.com/2017/05/wing-and-horizontal-and-vertical.html#more}.
+\newblock Online; zugegriffen 09 Dezember 2018.
+
+\bibitem[Innovations()]{AirbInoweb}
+Airborne Innovations.
+\newblock Aircraft icing warning sensor.
+\newblock \url{https://www.airborneinnovations.com/ai/products/icewarning/}.
+\newblock Online; zugegriffen 09 Dezember 2018.
+
+\bibitem[Mindermann(2014)]{Minderthes}
+Pascal Mindermann.
+\newblock Detektion von atmosphärischem eis aufgrund der veränderung des
+  wärmewiderstandes, 2014.
+
+\bibitem[Armee(2005)]{Pumapp}
+Schweizer Armee.
+\newblock Schulungsunterlagen zur Enteisungsvorrichtung des Super Puma, 2005.
+
+\bibitem[AG({\natexlab{b}})]{Swissheliweb}
+Swiss~Helicopter AG.
+\newblock Super puma as 332 c1.
+\newblock
+  \url{https://www.swisshelicopter.ch/de/ueber-uns/flotte/super-puma-as-332-c1},
+  {\natexlab{b}}.
+\newblock Online; zugegriffen 09 Dezember 2018.
+
+\bibitem[eologix sensor~technology gmbh()]{Eologixweb}
+eologix sensor~technology gmbh.
+\newblock Eologix sensor system.
+\newblock \url{https://eologix.com/de/product-ln/}.
+\newblock Online; zugegriffen 09 Dezember 2018.
+
+\end{thebibliography}

@@ -1,0 +1,46 @@
+\section{Einleitung}\label{Einleitung}
+
+Aeroscout entwickelt Drohnen für diverse Aufgaben.\cite{Aeroweb} Zukünftig sollen die Drohnen für Flüge im Hochgebirge eingesetzt werden. Dabei sind Anwendungen im Bereich der Bergrettung und der künstlichen Lawinenauslösung im Fokus. Heute werden solche Flüge mit bemannten Hubschraubern oder gar nicht ausgeführt. Flüge mit bemannte Hubschrauber sind sehr teuer und bei nur kleinen Risiken wird auf ein Flug verzichtet. Ein Drohnennflug ist im Vergleich billiger und wenn bei kritischen Wetterbedingungen Flüge möglich wären, wäre das ein sehr grosser Vorteil.
+Dazu müssen die Drohnen aber extremen, meteorologischen Bedingungen standhalten können. Ein grosses Problem stellt dabei die Vereisung der Rotorblätter dar. Durch die Formveränderung, die dabei am Rotorblatt erfolgt, ist die Aerodynamik gestört und die Drohne wird innert kürze flugunfähig.
+Diese Arbeit soll daher die Grundlage schaffen, um solche Vereisungen zu vermeiden. Sie erfolgt in enger zusammenarbeite mit Romeo Bee von der Maschinentechnik. Seine Projektarbeit bezieht sich auf die Fertigung eines neuen Heckrotorblätter, in welches die nötigen Enteisungsmassnahmen integriert sein sollen. 
+
+\section{Aufgabestellung}\label{Aufgabestellung}
+
+Für den Heckrotor soll der Prototyp einer Enteisungsvorrichtung entwickelt werden. Dies beinhaltet die Recherche über bestehende Systeme, die Ausarbeitung von möglichen Lösungsansätzen und die Realisierung eines Testaufbaus mit dem Heckrotor. Nach Möglichkeit soll die Funktion bei verschiedenen Temperaturen und bei verschiedenen Luftfeuchtigkeiten aufgezeigt werden.
+
+\subsection{Problemaufspaltung} 
+Die Aufgabenstellung kann in drei Teilprobleme unterteilt werden. Ein Teil ist die Enteisung als solches. Wie lässt sich Eisbildung verhindern oder wie entfernt man bereits gebildetes Eis.
+Eine weitere Teilaufgabe besteht in der Detektion der Problematik. Welche Messungen sind nötig um Vereisung oder Vereisungsbedingungen sicher zu erkennen und darauf reagieren zu können.
+Die letzte Teilaufgabe beinhaltet den Aufbau des Prototypen mit Bau und Anschaffung der nötiger Elektronik und die Programmierung der nötigen Software.
+
+\section{Eisverhinderung}
+\subsection{Verhinderung durch Oberflächenstruktur}
+Ein Ansatz ist, den Rotor mit einer Oberflächenstruktur zu fertigen, welche kein Ansetzen von Eis zulässt. Bis heute gibt es jedoch keine Oberfläche, die diese Anforderung erfüllt. Die Vereisung lässt sich durch Oberflächenstrukturen vermindern, jedoch nicht ganz ausschliessen. Weiter haben die Strukturen kurze Lebensdauern und sind schwer zu überprüfen.
+[Quelle]
+\subsection{Mechanische Eisablösung}
+Eine Methode, die bei kleineren Flugzeugen im Einsatz ist, löst das Eis durch mechanische Verformung. Luftdruck bläht an der Flügelvorderkante angebrachte Luftkissen auf und sprengt so das Eis weg. Die Methode beinhält zwei wesentlicher Schwierigkeiten. Zum einen müsste die Verformung genau im richtigen Moment erfolgen. Es muss sich bereits Eis gebildet haben, dieses darf aber die Flugfähigkeit der Drohne nur minimal beeinflussen. Weiter sind die nötigen Konstruktionen für eine solche Vorrichtung an einem drehenden Rotor sehr aufwändig.
+
+\subsection{Elektrische Beheizung}
+Die in der Aviatik etablierten Systeme basieren auf elektrischem Beheizen. Dabei gibt es gibt zwei Varianten der Ansteuerung. Die eine hält nach der Einschaltung den Rotor durch ständige Beheizung Eisfrei. Das bedeutet aber einen ununterbrochenen Energie bedarf. In dieser Arbeit sprechen wir von AntiIcing. Weit effizienter ist DeIcing. Die Beheizung erfolgt nur in kurzen Perioden und schmilzt so nur die Verbindung zwischen Eis und Rotor. So löst sich das Eis ab. Ein Nachteil dabei ist, dass sich das Eis welches sich zwischen zwei Perioden bildet, bereits Einflüsse auf das Flugverhalten der Drohne haben kann. Weiter ist zu beachten, dass die abgelösten Eisstücke zu Schäden führen können. Beim Superpuma, ein Hubschrauber welche die Schweizer Armee einsetzt, ist der Hauptrotor mit einem DeIcing-System ausgestattet. Der Heckrotor, verfügt jedoch über ein AntiIcing System, da gelöste Eisstücke den Hauptrotor oder den Hubschrauber selbst beschädigen könnten.
+\subsubsection{CNT-Farbe}
+Carbon Nanotube (CNT) sind leitfähige Fasern aus Kohlenstoff mit Durchmessern im Nanometerbereich. In Lacken und Kunststoffen gelöst führen sie zu elektrischer Leitfähigkeit. Die Fraunhofer-Gesellschaft bietet CNT Material in Form einer wasserbasierten Dispersion als Farbe oder Lack an. Die Farbe erzeugt eine homogene Erwärmung auf der aufgetragenen Fläche nach anlegen von elektrischer Spannung.\cite{Frhofweb}
+Über die Abriebfestigkeit der Dispersion gibt die Fraunhofer-Gesellschaft keine Auskunft. Eine Verarbeitung am Rotorblatt scheint ungünstig. An der Oberfläche aufgetragen sind die mechanischen Ansprüche zu hoch für einen langlebigen betrieb. Eine Einarbeitung in Schichten des Rotorblatt ist schwierig zu realisieren.
+\subsubsection{Textile Heizelemente}
+Die Forster Rohner AG stellt textile Heizelemente her\cite{ForstRoweb}. Mit maximal 0.1\(\frac{W}{cm^2}\)\cite{ForstRoweb} ist die Leistung für eine Enteisung viel zu gering. Das verfahren zur Einarbeitung von Heizelement in Stoffe könnte jedoch gegebenen falls auch zur Einarbeitung in die Carbonlagen des Rotorblattes als Grundlage dienen. Der technische Partner von Forster Rohner, die Firma Interactive Wear, gibt keine Auskunft über Herstellungsverfahren.
+
+\subsection{Beheizen durch Abwärme}
+Eine Möglichkeit besteht darin, die Abwärme des Hauptmotors direkt zum beheizen des Rotor zu verwenden. Bei einigen Flugzeugen eingesetzte Methoden, bedienen sich genau diesem Konzept. Dabei ist im Flügel des Flugzeuges eine Leitung integriert. Die Abgase entfliehen durch diese Leitung und erwärmen so den Flügel\cite{AeroGuideweb}. Da die Motoranlage beim Hauptteil der Drohne liegt und eine Zufuhr zum Heckrotor viel Entwicklungsarbeit erfordert, ist das Verfahren hier nicht weiter behandelt. Es ist aber als Idee für den Hauptrotor erwähnt.
+
+\section{Detektion}
+Die Erkennung von Eis ist ein weitgehendes Problem. Interesse an der Problematik haben vor wiegenden die Sparten Windenergieanlagen und in der Luftfahrt sowohl Helikopter und Flugzeugverkehr. Die meisten Verfügbaren Informationen und Messdaten stammen von Windenergieanlagen. Für die Ermittlung potenzieller Vereisungsbedingungen sind die Daten nur bedingt hilfreich. Vereisungsbedingungen sind im Flug anders als am Boden. Windenergiewerke stellen oft den Betrieb bei Vereisung ein und sind daher eher an vorhandenem Eis interessiert. Die verfügbaren Messdaten beziehen sich mehrheitlich auf die Verlässlichkeit von Eisdetektion und weniger auf Umgebungsbedingungen die eine Eisbildung begünstigen.
+\subsection{Sensoren zur Eisdetektion}
+Bemannte Hubschrauber, welche mit einem Enteisung System ausgerüstet sind, verfügen im Normalfall einen Eissensor am Rumpf. Laut Angaben eines Piloten der Schweizer Armee, erkennt er jedoch Vereisung bereit bevor der Sensor reagiert. Hinweise sind Eisbildung an den Scheibenwischern und unruhiges Verhalten der Maschine. Daraus lässt sich schliessen, dass eine Messung am Rumpf zur Beurteilung des Rotor nicht ideal ist.
+Die Sensoren zur Eisdetektion arbeiten auf unterschiedlichste Art und Weise. Ein System welches bei Windenergieanlagen verwendet wird, misst die Impedanz an der Oberfläche und ermittelt daraus eine Stufe für die Eisdicke. Mittels Funksignal sendet der Sensor die Daten zu einer Station. Über kleine Solarmodule gewinnt er die zum messen nötige Energie und arbeitet somit Kabellos\cite{AirbInoweb}. Durch eine Einarbeitung eines solchen Sensors in das Rotorblatt liessen sich womöglich bessere Messresultate als mit Sensoren am Rumpf erzielen.
+Diverse weiter Messsysteme zur Eisdetektion sind in der Arbeit von Mindermann\cite{Minderthes} aufgeführt.
+
+\subsection{Detektion von Vereisungsbedingungen}
+Ein anderer Ansatz ist das Messen von Umgebungsbedingungen, wie beispielsweise Lufttemperatur oder Luftfeuchtigkeit. Daraus lässt sich gegebenenfalls abschätzen ob eine Vereisung möglich ist oder nicht. Die Firma Airbornne Inovationts bietet einen Sensor an, der genau eine solche Prognose abgibt. Er misst Luftfeuchtigkeit und –temperatur und ermittelt durch einen Algorithmus ob eine Vereisung möglich ist oder nicht. Mittels RS-232-Schnittstelle gibt er eine Rotorblatt-Vereisungswarnung, ein Vergaser-Vereisungswarnung und die rohen Messwerte aus. Der Sensor wurde in einer Doktorarbeit für den Einsatz bei Unbemannten Flugobjekten entwickelt. Der Sensor verfügt jedoch über keine Zertifizierung. Anfragen zur Erhältlichkeit blieben unbeantwortet\cite{AirbInoweb}.
+
+
+\section{Energieübertragung}
+Ein Problem das vorwiegend bei elektrischer Beheizung des Rotor besteht, ist die Energieübertragung auf den Rotor. Der Super Puma versorgt über einen mehrkontaktigen Schleifring sieben verschiedene Heizsegmente pro Rotor mit Energie\cite{Pumapp}. Der Anspruch an die Schleifkontakte ist aber gross. Der Hauptrotor dreht mit 268\(\frac{1}{min}\)\cite{Swissheliweb} und es wird eine Leistung von 23kW\cite{Pumapp} übertragen.
