@@ -1,3 +1,38 @@
-\section{Aufbau der Komponenten}
+\section{Aufbau der Komponenten}\label{Aufbau der Komponenten}
+Die Versuchsaufbauten zur Rotorblattenteisung bestehen im wesentlichen aus dem Heckrotorprüfstand und dem Prototypen. Der Prüfstand war bereits vorhanden und ist hier für zukünftig leichtere und schnellere Inbetriebnahme dokumentiert.
+\subsection{Heckrotorprüfstand}
+Der Prüfstand besteht aus einer Halterung, einem bürsten losen DC-Motor aus der Modeflugbranche und einem Regler zur Ansteuerung. Der Regler benötigt eine Speisung von 25V DC und verträgt einen Strom von maximal 100A. Sowohl der Regler als auch der Motor sind mit einem Lüfter bestückt. Um die Drehzahl zu detektieren ist ein induktiver Näherungsschalter verbaut und mit einem Tensy 3.2 Entwicklungsboard ausgewertet. Über eine serielle Schnittstelle gibt das Tensy die Drehzahl auf ein Terminal aus. Ein Servo-Tester stellt die Geschwindigkeit am Regler ein. Der Anstellwinkel der Rotorblätter lässt sich mechanisch an der Spindel verschieben. Während dem Betrieb ist er starr. 
+
+\begin{figure}[H]
+\centering
+\def\svgwidth{1\textwidth}
+\input{Heckrotorpruefstand.pdf_tex}
+\caption{Übersicht und Verdrahtung der elektrischen Komponenten des Heckrotorprüfstand}
+\end{figure}
+
+Der induktive Näherungsschalter ist so montiert, dass er bei jeder Umdrehung einmal ein und einmal aus ist. Das Teensy Board Misst jeweils die Zeit zwischen zwei Flanken. Aus jeweils 5 Werten bildet es das arithmetische Mittel. Mit 2Hz druckt das Board das Resultat auf die Console aus.
+
+\subsection{Prototyp}
+Der Prototyp übernimmt Funktion zum ausprobieren, zum messen und zum aufzeichnen. Kernstück ist das Tiny K22 Entwicklungsbord. Es ist eine Eigenentwicklung der Hochschule Luzern und verfügt über einen NXP K22FN512 ARM Cortex-M4F Mikrocontroller. Mit einem onboard debugger, dem bestückbaren SD-Kartenhalter und der kleinen Baugrösse, deckt es alle Ansprüche\cite{tinyweb}.\newline
+
+\begin{figure}[H]
+\centering
 \def\svgwidth{0.5\textwidth}
 \input{Bilder/Komponentendiagramm.eps_tex}
+\caption{Übersicht der Komponenten des Prototyp}
+\end{figure}
+
+\subsubsection{Software}
+Mit einem FreeRTOS Echtzeitbetriebssystem laufen 4 Funktionen auf der Controller. Das Programm führt die Aktionen in insgesamt 8 Task aus. Die Grundlage für das Projekt bieten die Beispielprojekte tinyK22Demo\cite{tinyDemoweb} und tinyK20DataLogger \cite{tinyLoggerweb} von Erich Styger.
+Das Bild zeigt die Prozesse, die das Betriebssystem ausführt. Die Schlüssel symbolisieren mit Mutexen geschützte Daten für prozessübergreifende Zugriffe.
+
+Die Hauptaufgabe ist im Application-Task realisiert und dient zur Ansteuerung eines elektrischen Heizelement. Dabei lassen sich die Heizzeit, die inaktive Zeit und das PWM-Duty Cicycle der Heizansteuerung zur Laufzeit verstellen. Zusätzlich ermöglicht der Task die EIn- und Ausschaltung der Heizung zur Laufzeit.
+\begin{figure}[H]
+\centering
+\def\svgwidth{1\textwidth}
+\input{Bilder/Heating_PWM.eps_tex}
+\caption{Logic Analyser Aufnahme vom Ausgang zur Heizungsansteuerung}
+\end{figure}
+
+ 
+

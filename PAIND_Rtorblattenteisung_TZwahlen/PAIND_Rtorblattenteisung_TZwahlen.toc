@@ -18,13 +18,15 @@
 \contentsline {subsection}{\numberline {4.2}Detektion von Vereisungsbedingungen}{9}{subsection.17}
 \contentsline {section}{\numberline {5}Energie\"ubertragung}{9}{section.18}
 \contentsline {part}{II\hspace {1em}Beschrieb der Komponenten}{9}{part.19}
-\contentsline {section}{\numberline {6}Aufbau der Komponenten}{10}{section.20}
-\contentsline {part}{III\hspace {1em}Beschrieb der Komponenten}{10}{part.21}
-\contentsline {section}{\numberline {7}Versuch zur Ermittlung der thermischen Energie}{10}{section.22}
-\contentsline {section}{\numberline {8}Versuch zur Eisbildung}{11}{section.23}
-\contentsline {subsection}{\numberline {8.1}Versuchsaufbau}{11}{subsection.24}
-\contentsline {subsection}{\numberline {8.2}Resultat}{11}{subsection.25}
+\contentsline {section}{\numberline {6}Aufbau der Komponenten}{9}{section.20}
+\contentsline {subsection}{\numberline {6.1}Heckrotorpr\"ufstand}{10}{subsection.21}
+\contentsline {subsection}{\numberline {6.2}Prototyp}{12}{subsection.23}
+\contentsline {subsubsection}{\numberline {6.2.1}Software}{12}{subsubsection.25}
+\contentsline {section}{\numberline {7}Versuch zur Ermittlung der thermischen Energie}{13}{section.27}
+\contentsline {section}{\numberline {8}Versuch zur Eisbildung}{13}{section.28}
+\contentsline {subsection}{\numberline {8.1}Versuchsaufbau}{13}{subsection.29}
+\contentsline {subsection}{\numberline {8.2}Resultat}{14}{subsection.30}
 \vspace *{\baselineskip }
-\contentsline {chapter}{Literaturverzeichnis}{11}{subsection.25}
-\contentsline {chapter}{Abbildungsverzeichnis}{13}{section*.26}
-\contentsline {chapter}{Tabellenverzeichnis}{14}{section*.27}
+\contentsline {chapter}{Literaturverzeichnis}{14}{subsection.30}
+\contentsline {chapter}{Abbildungsverzeichnis}{16}{section*.31}
+\contentsline {chapter}{Tabellenverzeichnis}{17}{section*.32}
