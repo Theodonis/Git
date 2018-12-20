@@ -2,16 +2,20 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: PAIND_Rtorblattenteis
 The style file: unsrtnat.bst
 Database file #1: Literaturverzeichniss.bib
 Warning--entry type for "Minderthes" isn't style-file defined
---line 19 of file Literaturverzeichniss.bib
+--line 26 of file Literaturverzeichniss.bib
 Warning--empty year in Aeroweb
+Warning--empty title in Pumapp
+Warning--empty year in Frhofweb2
+Warning--empty year in AeroGuideweb2
 Warning--empty year in Frhofweb
 Warning--empty year in ForstRoweb
 Warning--empty year in AeroGuideweb
+Warning--empty year in supcoldwiki
 Warning--empty year in AirbInoweb
-Warning--empty title in Pumapp
 Warning--empty year in Swissheliweb
 Warning--empty year in tinyweb
+Warning--empty year in SHT71
 Warning--empty year in tinyDemoweb
 Warning--empty year in tinyLoggerweb
 Warning--empty year in Eologixweb
-(There were 12 warnings)
+(There were 16 warnings)

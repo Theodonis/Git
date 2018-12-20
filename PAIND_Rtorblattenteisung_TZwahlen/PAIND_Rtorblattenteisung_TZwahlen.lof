@@ -1,5 +1,17 @@
 \babel@toc {english}{}
 \babel@toc {ngerman}{}
-\contentsline {figure}{\numberline {1}{\ignorespaces \"Ubersicht des Heckrotoraufbau\relax }}{11}{figure.caption.22}
-\contentsline {figure}{\numberline {2}{\ignorespaces \"Ubersicht der Komponenten des Prototyp\relax }}{12}{figure.caption.24}
-\contentsline {figure}{\numberline {3}{\ignorespaces Logic Analyser Aufnahme vom Ausgang zur Heizungsansteuerung\relax }}{13}{figure.caption.26}
+\babel@toc {english}{}
+\babel@toc {ngerman}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Sensor zur Detektion von Vereisungsbedingungen von Airborne Innovations\cite {AirbInoweb}\relax }}{12}{figure.caption.19}
+\contentsline {figure}{\numberline {2}{\ignorespaces Temperaturabh\"angiges auf das Maximum normiertes Risiko einer Flugzeugvereisung (rot), \"ubliche Erscheinungsbereiche verschiedener Eisarten (blau)\cite {Minderthes}\relax }}{12}{figure.caption.20}
+\contentsline {figure}{\numberline {3}{\ignorespaces \"Ubersicht der Komponenten des Prototyps\relax }}{14}{figure.caption.25}
+\contentsline {figure}{\numberline {4}{\ignorespaces Schaltschema der Leistungsendstufe\relax }}{16}{figure.caption.31}
+\contentsline {figure}{\numberline {5}{\ignorespaces \"Ubersicht der wichtigsten Tasks und der \"ubergreifenden Ressourcen\relax }}{17}{figure.caption.33}
+\contentsline {figure}{\numberline {6}{\ignorespaces Logic Analyser Aufnahme vom Ausgang zur Heizungsansteuerung\relax }}{18}{figure.caption.34}
+\contentsline {figure}{\numberline {7}{\ignorespaces \"Ubersicht und Verdrahtung der elektrischen Komponenten des Heckrotorpr\"ufstands\relax }}{20}{figure.caption.37}
+\contentsline {figure}{\numberline {8}{\ignorespaces Abl\"osezeit in Abh\"angigkeit der Heizleistung bei Raumtemperatur und in der Klimakammer mit der Probe mit Karbonoberfl\"ache\relax }}{21}{figure.caption.40}
+\contentsline {figure}{\numberline {9}{\ignorespaces Darstellung des Versuchsaufbau zur Rotorblattvereisung\relax }}{22}{figure.caption.44}
+\contentsline {figure}{\numberline {10}{\ignorespaces Verlauf der Drehzahl mit Einsetzen der Vereisung bei 0s\relax }}{23}{figure.caption.46}
+\contentsline {figure}{\numberline {11}{\ignorespaces Vereisung des Rottorblatts Vorderseite(l) und R\"uckseite(r)\relax }}{23}{figure.caption.47}
+\contentsline {figure}{\numberline {12}{\ignorespaces Verlauf der relativen Luftfeuchtigkeit(l) und der Lufttemperatur(r) bei zu Beginn unvereistem Sensor\relax }}{24}{figure.caption.48}
+\contentsline {figure}{\numberline {13}{\ignorespaces Verlauf der relativen Luftfeuchtigkeit(l) und der Lufttemperatur(r) bei vereistem Sensor\relax }}{24}{figure.caption.48}

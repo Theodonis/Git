@@ -33,10 +33,12 @@ linkcolor = black,
 plainpages = false,
 hypertexnames = false,
 citecolor = black] {hyperref} % Verweiseim PDF
+\usepackage{bookmark}
 \usepackage{microtype} % optische verbesserung
 \usepackage{booktabs} % Tabellen tool
 \usepackage{float}	% For Bilder
 \usepackage{subcaption} % Bilder nebeneinander
+
 \usepackage{xcolor}
 \usepackage{svg}
 \usepackage{import}
@@ -118,6 +120,11 @@ citecolor = black] {hyperref} % Verweiseim PDF
 		\includegraphics[width=#1\textwidth]{#2}
 	\end{figure}
 }
+\RedeclareSectionCommand[style=section,indent=0pt,font=\usekomafont{partnumber}]{part}
+\renewcommand*{\partformat}{\thepart\enskip}
+
+  \newcaptionname{ngerman}\equationname{Formel}%
+  \newcaptionname{ngerman}\listequationname{Formelverzeichnis}%
 
 % Zentriert auf linken Seiten die aktuelle Kapitelüberschrift,
 % auf rechten Seiten die Überschrift des aktuellen Abschnitts ausgeben:
@@ -143,46 +150,12 @@ citecolor = black] {hyperref} % Verweiseim PDF
 
 %% Deckblatt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ==> Schreiben Sie hier Ihren Text oder fügen Sie eine externe Datei ein.
-\pagestyle{scrheadings} %%Keine Kopf-/Fusszeilen auf den ersten Seiten.
-%% Die einfache Version:
-\title{Rotorbalattenteisung}
-\author{Theo Zwahlen}
-%\date{} %%Wenn kommentiert, wird das aktuelle Datum verwendet.
-	% , in Tabellen untereinander stellen
-	\newcolumntype{,}{D{,}{,}{-1}}
-	% +- in Tabellen untereinander stellen
-	\newcolumntype{p}{D{p}{\pm}{-1}}
 
-\maketitle
- \vspace{10mm}
-\newpage
-\makeatletter
-\def\@part[#1]#2{%
-     \ifnum \c@secnumdepth >\m@ne
-       \refstepcounter{part}%
-       \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
-     \else
-       \addcontentsline{toc}{part}{#1}%
-     \fi
-     {\parindent \z@ %\raggedright                    % Commented \raggedright
-      \interlinepenalty \@M
-      \normalfont
-      %\ifnum \c@secnumdepth >\m@ne
-     %   \Large\bfseries\hfil\partname~\thepart\hfil   %  added \hfil … \hfil for centering
-   %     \par\nobreak
-    %  \fi
-      \huge \bfseries #2%
-      \markboth{}{}\par}%
-     \nobreak
-     \vskip 3ex
-     \@afterheading}
-\makeatother
-
-	
 %% Die schönere Version:
-%\input{deckblatt} %%Eine Datei 'deckblatt.tex' wird hierfür benötigt.
+\input{deckblatt} %%Eine Datei 'deckblatt.tex' wird hierfür benötigt.
 %% ==> TeXnicCenter liefert eine mögliche Deckblattdatei
 %% ==> im Vorlagenarchiv mit (Datei | Neu von Vorlage...).
+\input{Selbstaendigkeitserklaerung}
 
 \input{Abstract}
 
@@ -206,8 +179,10 @@ citecolor = black] {hyperref} % Verweiseim PDF
 %% ==> Im folgenden ein paar Hinweise:
 
 
+\input{Vorwort}
 
 \part{Einführung}
+
 
 \input{Einleitung}
 
@@ -215,11 +190,12 @@ citecolor = black] {hyperref} % Verweiseim PDF
 
 \input{Konzept}
 
-
+\part{Versuche}
 
 \input{Versuche}
 
-
+\part{Schlussteil}
+\input{Schlussteil}
 
 %% <== Ende der Hinweise
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -235,19 +211,19 @@ citecolor = black] {hyperref} % Verweiseim PDF
 %% Literaturverzeichnis
 %% ==> Eine Datei 'literatur.bib' wird hierfür benötigt.
 %% ==> Sie müssen hierfür BibTeX verwenden (Projekt | Eigenschaften... | BibTeX)
-\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\addcontentsline{toc}{section}{Literaturverzeichnis}
 \nocite{*} %Auch nicht-zitierte BibTeX-Einträge werden angezeigt.
  %Art der Ausgabe: plain / apalike / amsalpha / ...
 \bibliography{Literaturverzeichniss} %Eine Datei 'literatur.bib' wird hierfür benötigt.
 
 %% Abbildungsverzeichnis
 \clearpage
-\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures
 
 %% Tabellenverzeichnis
 \clearpage
-\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
 \listoftables
 
 
@@ -256,7 +232,7 @@ citecolor = black] {hyperref} % Verweiseim PDF
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 %% ==> Schreiben Sie hier Ihren Text oder fügen Sie externe Dateien ein.
-
+\part{Anhang}
 %\input{Dateiname} %Eine Datei 'Dateiname.tex' wird hierfür benötigt.
 
 

@@ -124,7 +124,6 @@ void APP_setDutyPWM(uint16_t duty){
 
 #endif
 static void application_task(void* pvParameter){
-	uint16_t waitintime;
 
 	for(;;){
 		if(APP_getHeatingState()==APP_HEATING_ON){

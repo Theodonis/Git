@@ -1,38 +1,123 @@
-\section{Aufbau der Komponenten}\label{Aufbau der Komponenten}
-Die Versuchsaufbauten zur Rotorblattenteisung bestehen im wesentlichen aus dem Heckrotorprüfstand und dem Prototypen. Der Prüfstand war bereits vorhanden und ist hier für zukünftig leichtere und schnellere Inbetriebnahme dokumentiert.
-\subsection{Heckrotorprüfstand}
-Der Prüfstand besteht aus einer Halterung, einem bürsten losen DC-Motor aus der Modeflugbranche und einem Regler zur Ansteuerung. Der Regler benötigt eine Speisung von 25V DC und verträgt einen Strom von maximal 100A. Sowohl der Regler als auch der Motor sind mit einem Lüfter bestückt. Um die Drehzahl zu detektieren ist ein induktiver Näherungsschalter verbaut und mit einem Tensy 3.2 Entwicklungsboard ausgewertet. Über eine serielle Schnittstelle gibt das Tensy die Drehzahl auf ein Terminal aus. Ein Servo-Tester stellt die Geschwindigkeit am Regler ein. Der Anstellwinkel der Rotorblätter lässt sich mechanisch an der Spindel verschieben. Während dem Betrieb ist er starr. 
+
+\section{Konzept zur Beheizung}
+Eine in den Rotor eingearbeitete Metallform dient als Heizwiderstand. Ein Wasserstrahlschneider ermöglicht die genügend präzise Bearbeitung eines Chromstahlblechs zur Fertigung eines Musters mit der nötigen Fläche und einem definierten ohmschen Widerstand. Das Muster liegt zwischen den Karbonlagen des Rotorblatts. Daher muss es elektrisch isoliert sein. Die Details zur Herstellung hat Romeo Bee in seiner Arbeit aufgeführt. 
+Für Tests wird ein Heckrotorblatt mit solch einem Heizelement gefertigt. Zusammen mit dem Prototyp kann dann sowohl anti- und de-icing erprobt werden. 
+\newpage
+
+\section{Prototyp}
+Der Prototyp übernimmt Funktionen zum Ausprobieren, zum Messen und zum Aufzeichnen. Kernstück ist das Tiny K22 Entwicklungsbord. Es ist eine Eigenentwicklung der Hochschule Luzern und verfügt über einen NXP K22FN512 ARM Cortex-M4F Mikrocontroller. Mit einem onboard debugger, dem bestückbaren SD-Kartenhalter und der kleinen Baugrösse, deckt es alle Ansprüche.\cite{tinyweb}\newline
 
 \begin{figure}[H]
 \centering
-\def\svgwidth{1\textwidth}
-\input{Heckrotorpruefstand.pdf_tex}
-\caption{Übersicht und Verdrahtung der elektrischen Komponenten des Heckrotorprüfstand}
+\includegraphics[width =0.7\textwidth]{Komponentendiagramm}
+\caption{Übersicht der Komponenten des Prototyps}
 \end{figure}
 
-Der induktive Näherungsschalter ist so montiert, dass er bei jeder Umdrehung einmal ein und einmal aus ist. Das Teensy Board Misst jeweils die Zeit zwischen zwei Flanken. Aus jeweils 5 Werten bildet es das arithmetische Mittel. Mit 2Hz druckt das Board das Resultat auf die Console aus.
+Ein SHT71 Sensor misst die Temperatur und die relative Luftfeuchtigkeit. Über ein \(I^2C\) ähnliches Übertragungsprotokoll fragt das TinyK22 die Werte separat ab. Der Controller übernimmt die Umrechnung der Messwert in angenäherte relative Luftfeuchtigkeit (\ref{eq:RH_{linear}}) und in Temperatur (\ref{eq:T}). Die Temperaturkompensation (\ref{eq:RH_{true}}) der relativen Luftfeuchtigkeit ist \textbf{nicht} implementiert.
+\newpage
 
-\subsection{Prototyp}
-Der Prototyp übernimmt Funktion zum ausprobieren, zum messen und zum aufzeichnen. Kernstück ist das Tiny K22 Entwicklungsbord. Es ist eine Eigenentwicklung der Hochschule Luzern und verfügt über einen NXP K22FN512 ARM Cortex-M4F Mikrocontroller. Mit einem onboard debugger, dem bestückbaren SD-Kartenhalter und der kleinen Baugrösse, deckt es alle Ansprüche\cite{tinyweb}.\newline
+\begin{equation}
+  \begin{array}{c}
+RH_{linear} = -2.0468 + 0.0367 * SO_{RH} - 1.5955e-6 * SO_{RH}^2\\
+\label{eq:RH_{linear}}
+\text{ Berechnung der angenäherten relativen Luftfeuchtigkeit\cite{SHT71}}
+\end{array}
+\end{equation}
+%\centerline{Berechnung der angenäherten relativen Luftfeuchtigkeit\cite{SHT71}}\newline
 
+\begin{equation}
+  \begin{array}{c}
+T = -39.7 + 0.01 * SO_T\\
+\label{eq:T}
+\text{Berechnung der Lufttemperatur\cite{SHT71}}
+\end{array}
+\end{equation}
+
+
+\begin{equation}
+\begin{array}{c}
+RH_{true} =(T-25)*(0.01+8e-5*SO_{RH})+RH_{linear}\\
+\label{eq:RH_{true}}
+\text{Temperaturkompensation der relativen Luftfeuchtigkeit(\textbf{nicht implementiert})\cite{SHT71}}
+\end{array}
+\end{equation}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{ | l | l | r |}
+    \hline
+\(RH_{linear}\) & angenäherte relative Luftfeuchtigkeit & \% \\ \hline
+\(SO_{RH}\) & Rohmesswert der relativen Luftfeuchtigkeit & \ \\ \hline
+\(T\) & Lufttemperatur & °C \\ \hline
+\(SO_{T}\) & Rohmesswert der Lufttemperatur& \ \\ \hline
+\(RH_{true}\) & Temperaturkompensation der relativen Luftfeuchtigkeit& \% \\ \hline
+
+  \end{tabular}
+  \caption{Zeichenerklärung zu den Messwertberechnungen}
+\end{table}
+\newpage
+\subsection{Leistungsendstufe}
+Zur Ansteuerung eines elektrischen Heizelements  dient die Leistungsendstufe. Sie besteht aus einem N-Kanal MOSFET und dessen Beschaltung. Sie ermöglicht die Ansteuerung einer Heizung mit bis zu 60V und 12A durch den PWM Ausgang vom TinyK22. Auf die Serienschaltung einer Induktivität zum Glätten des Stroms durch die Heizung wurde bis jetzt verzichtet. Die getesteten Heizkörper verfügen über genügend Trägheit. Je nach Heizelement könnte dies aber nötig sein.
 \begin{figure}[H]
 \centering
-\def\svgwidth{0.5\textwidth}
-\input{Bilder/Komponentendiagramm.eps_tex}
-\caption{Übersicht der Komponenten des Prototyp}
+\includegraphics[trim = 38mm 128mm 10mm 43mm,clip,width =3.5\textwidth]{Leistungsstufe}
+\caption{Schaltschema der Leistungsendstufe}
 \end{figure}
 
-\subsubsection{Software}
-Mit einem FreeRTOS Echtzeitbetriebssystem laufen 4 Funktionen auf der Controller. Das Programm führt die Aktionen in insgesamt 8 Task aus. Die Grundlage für das Projekt bieten die Beispielprojekte tinyK22Demo\cite{tinyDemoweb} und tinyK20DataLogger \cite{tinyLoggerweb} von Erich Styger.
-Das Bild zeigt die Prozesse, die das Betriebssystem ausführt. Die Schlüssel symbolisieren mit Mutexen geschützte Daten für prozessübergreifende Zugriffe.
+\newpage
+\subsection{Software}
+Mit einem FreeRTOS Echtzeitbetriebssystem laufen 4 Funktionen auf dem Controller. Das Programm führt die Aktionen in insgesamt 7 Tasks aus. Die Grundlage für das Projekt bieten die Beispielprojekte tinyK22Demo\cite{tinyDemoweb} und tinyK20DataLogger\cite{tinyLoggerweb} von Erich Styger.
+Das Bild zeigt die zentralen Prozesse, die das Betriebssystem ausführt. Die Schlüssel symbolisieren mit Mutexen geschützte Daten für prozessübergreifende Zugriffe.
 
-Die Hauptaufgabe ist im Application-Task realisiert und dient zur Ansteuerung eines elektrischen Heizelement. Dabei lassen sich die Heizzeit, die inaktive Zeit und das PWM-Duty Cicycle der Heizansteuerung zur Laufzeit verstellen. Zusätzlich ermöglicht der Task die EIn- und Ausschaltung der Heizung zur Laufzeit.
 \begin{figure}[H]
 \centering
-\def\svgwidth{1\textwidth}
-\input{Bilder/Heating_PWM.eps_tex}
+\includegraphics[trim = 45mm 30mm 0mm 30mm,clip,width =1.5\textwidth]{Taskuebersicht.pdf}
+\caption{Übersicht der wichtigsten Tasks und der übergreifenden Ressourcen}
+\end{figure}
+
+Die Hauptaufgabe ist im Application-Task realisiert und dient zur Ansteuerung eines elektrischen Heizelements. Dabei lassen sich die aktive, die inaktive Zeit für ein de-icing und das PWM-duty cycle der Heizansteuerung zur Laufzeit verstellen. Zusätzlich ermöglicht der Task die Ein- und Ausschaltung der Heizung zur Laufzeit.
+\begin{figure}[H]
+\centering
+
+\includegraphics[width =1\textwidth]{Heating_PWM.pdf}
 \caption{Logic Analyser Aufnahme vom Ausgang zur Heizungsansteuerung}
 \end{figure}
 
- 
+Eine zentrale Einheit im Code bildet das Sensor.c File. Es verwaltet die Daten der Sensoren und schützt diese gegen Mehrfachzugriffe von verschiedenen Tasks. Der SHT71 Task schreibt beispielsweise im Sekundentakt die Messwerte für Lufttemperatur und relativer Luftfeuchtigkeit in  durch Mutexen geschützten Variablen im Sensor.c File.
+Der Logger Task ist für die Aufzeichnung der Werte zuständig. Mit 1 Hz schreibt er die Messwerte auf eine SD-Karte in das "LOG.TXT"\ Dokument. Der Zeitstempel zu den Messwerten startet bei 17:51:31 und muss manuell synchronisiert werden.
+Zur Ansteuerung der ganzen Applikation dient der Shell Task. Er realisiert eine Kommando Parser der über eine serielle Schnittstelle angesteuert wird. Die Baudrate der Übertragung beträgt 384000. Einige wichtige Befehle sind hier aufgeführt:
 
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{ | l | l | r }
+    \hline
+CMD> FAT32 print LOG.TXT & Druckt das momentane Logfile aus \\ \hline
+CMD> TmDt1 time 00:00:00 & Setzt die Systemzeit auf 00:00:00 Uhr \\ \hline
+CMD> Sensor status & Gibt die aktuellen Messwerte aus. \\ \hline
+CMD> APP set PWM 700 & Setzt das PWM auf 700 Promille Duty Cycle \\ \hline
+CMD> APP set on time 3 & Setzt die Heizzeit pro Periode auf 3 Sekunden \\ \hline
+CMD> APP set heater on & Schaltet die Heizung ein \\ \hline
+  \end{tabular}
+  \caption{Übersicht der wichtigsten Shell Kommandos}
+\end{table}
+
+
+ \section{Heckrotorprüfstand}
+Der Prüfstand ist nicht Resultat dieser Arbeit. Es erfolgen lediglich Anpassungen daran. Die Aeroscout stellt ihn für Versuche zur Verfügung. Die detaillierte Beschreibung soll zukünftige Versuche vereinfachen und Einarbeitungszeiten verkürzen.
+Der Prüfstand besteht aus einer Halterung, einem bürstenlosen DC-Motor aus der Modelflugbranche und einem Regler zur Ansteuerung. Der Regler benötigt eine Speisung von 25V DC und verträgt einen Strom von maximal 100A. Sowohl der Regler als auch der Motor sind mit einem Lüfter bestückt. Um die Drehzahl zu detektieren ist ein induktiver Näherungsschalter verbaut und mit einem Tensy 3.2 Entwicklungsboard ausgewertet. Über eine serielle Schnittstelle gibt das Teensy die Drehzahl auf ein Terminal aus. Ein Servo-Tester stellt die Geschwindigkeit am Regler ein. Der Anstellwinkel der Rotorblätter lässt sich mechanisch an der Spindel verschieben. Während dem Betrieb ist er starr. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[trim = 0mm 0mm 0mm 0mm,clip,width =0.8\textwidth]{Heckrotorpruefstand.pdf}
+\caption{Übersicht und Verdrahtung der elektrischen Komponenten des Heckrotorprüfstands}
+\end{figure}
+
+Der induktive Näherungsschalter ist so montiert, dass er bei jeder Umdrehung einmal ein und einmal aus schaltet. Das Teensy Board misst jeweils die Zeit zwischen zwei Flanken. Aus jeweils 5 Werten bildet es das arithmetische Mittel. Mit 2Hz druckt das Board die daraus berechnete Drehzahl auf die Konsole aus.\\
+Für Versuch mit einem beheizten Rotorblatt ist der Prüfstand mit einem zweikontaktigen Schleifring ausgerüstet. 
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[trim = 0mm 50mm 0mm 40mm,clip,width =1\textwidth]{Heckrotorpruefstand.pdf}
+%\caption{Übersicht und Verdrahtung der elektrischen Komponenten des Heckrotorprüfstands}
+%\end{figure}

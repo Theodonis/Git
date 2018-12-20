@@ -1,0 +1,93 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Taskuebersicht.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1190.5511811bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.70714286)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Taskuebersicht.pdf}}%
+    \put(0.12309754,0.55060837){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Application Task\end{tabular}}}}%
+    \put(0.15454963,0.5364525){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Prio: 4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Taskuebersicht.pdf}}%
+    \put(0.13744226,0.14464805){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SHT71 Task\end{tabular}}}}%
+    \put(0.15473008,0.13049218){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Prio: 3\end{tabular}}}}%
+    \put(0.07919501,0.66100836){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.14669077\unitlength}\raggedright \end{minipage}}}%
+    \put(0.33055111,0.42446218){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}heating\_state\end{tabular}}}}%
+    \put(0.33055111,0.40236657){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}heatintime\_s\end{tabular}}}}%
+    \put(0.33105647,0.38067485){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}dontheatintime\_s\end{tabular}}}}%
+    \put(0.32929121,0.26611775){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}humidity\end{tabular}}}}%
+    \put(0.3300984,0.24481299){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}temperature\end{tabular}}}}%
+    \put(0.00251984,0.7096627){\color[rgb]{0,0,0.03921569}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}APP\_getHeatingState()\end{tabular}}}}%
+    \put(0.00251984,0.71092262){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}APP\_getHeatingTime()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{Taskuebersicht.pdf}}%
+    \put(0.00251984,0.71092262){\color[rgb]{0,0,0.03921569}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}APP\_getDontHeatingTime()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{Taskuebersicht.pdf}}%
+    \put(0.00251984,0.70939708){\color[rgb]{0,0,0.03921569}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SENSOR\_SetHumidity()\end{tabular}}}}%
+    \put(0.00251984,0.7096627){\color[rgb]{0,0,0.03921569}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SENSOR\_SetTemperature()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{Taskuebersicht.pdf}}%
+    \put(0.59141295,0.548091){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Shell Task\end{tabular}}}}%
+    \put(0.60310988,0.53393513){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Prio: 1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{Taskuebersicht.pdf}}%
+    \put(0.58467369,0.14464806){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Logger Task\end{tabular}}}}%
+    \put(0.602831,0.13049219){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Prio: 2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{Taskuebersicht.pdf}}%
+    \put(0.00251984,0.70943771){\color[rgb]{0,0,0.03921569}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SENSOR\_GetHumidity()\end{tabular}}}}%
+    \put(0.00251984,0.70946584){\color[rgb]{0,0,0.03921569}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}SENSOR\_GetTemperature()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{Taskuebersicht.pdf}}%
+    \put(0.00251984,0.7096627){\color[rgb]{0,0,0.03921569}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}APP\_getHeatingState()\end{tabular}}}}%
+    \put(0.00251984,0.7096627){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}APP\_getHeatingTime()\end{tabular}}}}%
+    \put(0.00251984,0.7096627){\color[rgb]{0,0,0.03921569}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}APP\_getDontHeatingTime()\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{Taskuebersicht.pdf}}%
+    \put(0.00251984,0.7096627){\color[rgb]{0,0,0.03921569}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}APP\_HeaterOn/Off()\end{tabular}}}}%
+    \put(0.00377976,0.7096627){\color[rgb]{0,0,0.03921569}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}APP\_setHeatingTime()\end{tabular}}}}%
+    \put(0.00377976,0.7096627){\color[rgb]{0,0,0.03921569}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}APP\_setDontHeatingTime()\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

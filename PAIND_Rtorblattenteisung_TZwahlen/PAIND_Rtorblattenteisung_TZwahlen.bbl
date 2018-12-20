@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{16}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -11,11 +11,32 @@ Aeroscout GmbH.
 \newblock \url{https://www.aeroscout.ch/}.
 \newblock Online; zugegriffen 09. Dezember 2018.
 
-\bibitem[IPA()]{Frhofweb}
+\bibitem[Armee(2005)]{Pumapp}
+Schweizer Armee.
+\newblock Schulungsunterlagen zur Enteisungsvorrichtung des Super Puma, 2005.
+
+\bibitem[IPA({\natexlab{a}})]{Frhofweb2}
+Fraunhofer IPA.
+\newblock Anti-eis-beschichtungen.
+\newblock
+  \url{https://www.igb.fraunhofer.de/de/forschung/kompetenzen/grenzflaechentechnik/plasmaverfahren/anti-eis-beschichtungen.html},
+  {\natexlab{a}}.
+\newblock Online; zugegriffen 15. Dezember 2018.
+
+\bibitem[Guide({\natexlab{a}})]{AeroGuideweb2}
+Aeronautics Guide.
+\newblock Aircraft wing and stabilizer deicing systems.
+\newblock
+  \url{https://okigihan.blogspot.com/2017/05/wing-and-stabilizer-deicing-systems.html},
+  {\natexlab{a}}.
+\newblock Online; zugegriffen 15. Dezember 2018.
+
+\bibitem[IPA({\natexlab{b}})]{Frhofweb}
 Fraunhofer IPA.
 \newblock Cnt-flächenheizung.
 \newblock
-  \url{https://www.elektromobilitaet.fraunhofer.de/de/bauweisen_infrastruktur/cnt_flaechenheizung.html}.
+  \url{https://www.elektromobilitaet.fraunhofer.de/de/bauweisen_infrastruktur/cnt_flaechenheizung.html},
+  {\natexlab{b}}.
 \newblock Online; zugegriffen 09. Dezember 2018.
 
 \bibitem[AG({\natexlab{a}})]{ForstRoweb}
@@ -24,27 +45,31 @@ Forster~Rohner AG.
 \newblock \url{http://www.frti.ch/technologie/}, {\natexlab{a}}.
 \newblock Online; zugegriffen 09. Dezember 2018.
 
-\bibitem[Guide()]{AeroGuideweb}
+\bibitem[Guide({\natexlab{b}})]{AeroGuideweb}
 Aeronautics Guide.
 \newblock Wing anti-ice (wai) system.
 \newblock
-  \url{https://okigihan.blogspot.com/2017/05/wing-and-horizontal-and-vertical.html#more}.
+  \url{https://okigihan.blogspot.com/2017/05/wing-and-horizontal-and-vertical.html#more},
+  {\natexlab{b}}.
 \newblock Online; zugegriffen 09. Dezember 2018.
 
-\bibitem[Innovations()]{AirbInoweb}
-Airborne Innovations.
-\newblock Aircraft icing warning sensor.
-\newblock \url{https://www.airborneinnovations.com/ai/products/icewarning/}.
-\newblock Online; zugegriffen 09. Dezember 2018.
+\bibitem[Wikipedia()]{supcoldwiki}
+Wikipedia.
+\newblock Unterkühlung (thermodynamik).
+\newblock
+  \url{https://de.wikipedia.org/wiki/Unterk%C3%BChlung_(Thermodynamik)}.
+\newblock Online; zugriff 19 Dezember 2018.
 
 \bibitem[Mindermann(2014)]{Minderthes}
 Pascal Mindermann.
 \newblock Detektion von atmosphärischem eis aufgrund der veränderung des
   wärmewiderstandes, 2014.
 
-\bibitem[Armee(2005)]{Pumapp}
-Schweizer Armee.
-\newblock Schulungsunterlagen zur Enteisungsvorrichtung des Super Puma, 2005.
+\bibitem[Innovations()]{AirbInoweb}
+Airborne Innovations.
+\newblock Aircraft icing warning sensor.
+\newblock \url{https://www.airborneinnovations.com/ai/products/icewarning/}.
+\newblock Online; zugegriffen 09. Dezember 2018.
 
 \bibitem[AG({\natexlab{b}})]{Swissheliweb}
 Swiss~Helicopter AG.
@@ -61,6 +86,11 @@ Erich Styger.
   \url{https://mcuoneclipse.com/2017/12/08/first-tinyk22-board-with-nxp-k22fn512-arm-cortex-m4f/},
   {\natexlab{a}}.
 \newblock Online; zugegriffen 12. Dezember 2018.
+
+\bibitem[Sen()]{SHT71}
+\emph{Datasheet SHT7x}.
+\newblock Sensirion AG.
+\newblock Online; zugriff 15 Dezember 2018.
 
 \bibitem[Styger({\natexlab{b}})]{tinyDemoweb}
 Erich Styger.

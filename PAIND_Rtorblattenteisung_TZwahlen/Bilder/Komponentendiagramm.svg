@@ -220,10 +220,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="535.41128"
+     inkscape:cx="315.05414"
      inkscape:cy="920.83832"
      inkscape:document-units="mm"
-     inkscape:current-layer="g4704"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-center="false"
      inkscape:connector-spacing="4"
@@ -354,7 +354,7 @@
            id="tspan4678"
            x="25.736191"
            y="87.462517"
-           style="stroke-width:0.26458332">Rel. Luftfeuchte</tspan></text>
+           style="stroke-width:0.26458332">rel. Luftfeuchte</tspan></text>
     </g>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5098)"

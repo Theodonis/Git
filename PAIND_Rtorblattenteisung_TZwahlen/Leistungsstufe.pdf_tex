@@ -1,0 +1,77 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Leistungsstufe.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{842.00006104bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.70665076)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Leistungsstufe.pdf}}%
+    \put(0.31167574,0.50812347){\color[rgb]{0,0,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Q1\\MOSFET N\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Leistungsstufe.pdf}}%
+    \put(0.23329095,0.50498807){\color[rgb]{0,0,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R1\\1k\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{Leistungsstufe.pdf}}%
+    \put(0.28160449,0.47306409){\color[rgb]{0,0,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}R2\\100k\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{Leistungsstufe.pdf}}%
+    \put(0.14607006,0.49814722){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}PTB18 / 20\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{Leistungsstufe.pdf}}%
+    \put(0.14763775,0.48931112){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND / 21\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{Leistungsstufe.pdf}}%
+    \put(0.14607006,0.44171017){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}V-\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{Leistungsstufe.pdf}}%
+    \put(0.14607006,0.45239901){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}V+\end{tabular}}}}%
+    \put(0.13409856,0.50755339){\color[rgb]{0,0,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Input TinyK22\\Input Power\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{Leistungsstufe.pdf}}%
+    \put(0.32549997,0.53691206){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}V+\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{Leistungsstufe.pdf}}%
+    \put(0.32549997,0.52693582){\color[rgb]{0.50196078,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}V-\end{tabular}}}}%
+    \put(0.31794652,0.54517809){\color[rgb]{0,0,0.50196078}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Output Heater\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

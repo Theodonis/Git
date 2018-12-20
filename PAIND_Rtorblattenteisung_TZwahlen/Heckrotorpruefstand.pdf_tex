@@ -58,19 +58,30 @@
     \put(0,0){\includegraphics[width=\unitlength,page=1]{Heckrotorpruefstand.pdf}}%
     \put(0.13407441,1.18501634){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.54727802\unitlength}\raggedright \textbf{teensy 3.2}\end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{Heckrotorpruefstand.pdf}}%
-    \put(0.6609137,0.55430852){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.25985863\unitlength}\centering \textbf{Motor}\end{minipage}}}%
+    \put(0.6609137,0.59462601){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.25985863\unitlength}\centering \textbf{Motor}\end{minipage}}}%
     \put(0.04334071,0.31129027){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.34641628\unitlength}\raggedright \end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{Heckrotorpruefstand.pdf}}%
-    \put(0.04209445,0.35412758){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.34149471\unitlength}\centering \textbf{Netzteil}\end{minipage}}}%
-    \put(0.03959247,0.30151474){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.34644722\unitlength}\centering \textit{25V 100A}\end{minipage}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{Heckrotorpruefstand.pdf}}%
-    \put(0.16750385,0.55644119){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.25985863\unitlength}\raggedleft \textbf{Regler}\end{minipage}}}%
+    \put(0.16750385,0.59675867){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.25985863\unitlength}\raggedleft \textbf{Regler}\end{minipage}}}%
     \put(0.14961557,0.37994479){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.33761935\unitlength}\raggedright \end{minipage}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{Heckrotorpruefstand.pdf}}%
+    \put(0.04209445,0.39192522){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.34149471\unitlength}\centering \textbf{Netzteil}\end{minipage}}}%
+    \put(0.03959247,0.33931238){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.34644722\unitlength}\centering \textit{25V 100A}\end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{Heckrotorpruefstand.pdf}}%
-    \put(0.27836717,0.48843393){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.28397389\unitlength}\centering \textbf{L\"ufter}\end{minipage}}}%
+    \put(0.27836717,0.52875139){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.28397389\unitlength}\centering \textbf{L\"ufter}\end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{Heckrotorpruefstand.pdf}}%
-    \put(0.68534222,0.48912144){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.28397389\unitlength}\centering \textbf{L\"ufter}\end{minipage}}}%
+    \put(0.68534222,0.52943891){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.28397389\unitlength}\centering \textbf{L\"ufter}\end{minipage}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{Heckrotorpruefstand.pdf}}%
     \put(0.64674997,0.85763035){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.39864676\unitlength}\raggedright \textbf{N\"aherungsensor}\end{minipage}}}%
+    \put(0.16081705,1.099339){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Pin 6\end{tabular}}}}%
+    \put(0.07310074,1.09843263){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GND\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{Heckrotorpruefstand.pdf}}%
+    \put(0.39046714,1.15802073){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}USB\end{tabular}}}}%
+    \put(0.38571915,1.10026968){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Baud: 38400\end{tabular}}}}%
+    \put(0.46193082,0.73231854){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.04365401\unitlength}\raggedright \end{minipage}}}%
+    \put(0.33395326,0.68377878){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20869296\unitlength}\raggedright \textbf{Servotester}\end{minipage}}}%
+    \put(0.30963778,0.66906775){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+\end{tabular}}}}}%
+    \put(0.30068625,0.64405946){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.26160331,0.69543392){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Servo\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{Heckrotorpruefstand.pdf}}%
   \end{picture}%
 \endgroup%

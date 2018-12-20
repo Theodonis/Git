@@ -1,10 +1,58 @@
 \section{Versuch zur Ermittlung der thermischen Energie}
-Eine erste Versuchsrunde soll die nötige Energie zum lösen von Eis zeigen. Mit einem Heizdraht versehene Proben entsprechen dem Aufbau eines Rotorblatt. Auf gefrorene Stoffstücke sollen die Eisschicht imitieren. Gewicht das an den Stoffstücke hängt, simuliert die Fliehkraft, die am Rotor auf das Eis wirkt. Die Zeit bis sich der Stoff von der Probe löst soll zeigen welche Leistung pro Quadratzentimeter sinnvoll ist. Leider geben die Resultate keine sinnvolle Resultate. Die Leistung kann nicht in den Zusammenhang zur Leistung gebracht werden. Auch eine Wiederholung des Versuchs in der Klimakammer bei -10°C Lufttemperatur kann die Resultate nicht verbessern. Die
+Eine erste Versuchsrunde soll die nötige Energie zum Lösen von Eis zeigen. Mit einem Heizdraht versehene Proben entsprechen dem Aufbau eines Rotorblatts. Aufgefrorene Stoffstücke sollen die Eisschicht imitieren. Gewicht, das an den Stoffstücken hängt, simuliert die Fliehkraft, die am Rotor auf das Eis wirkt. Die Zeit bis sich der Stoff von der Probe löst soll zeigen welche Leistung pro Quadratzentimeter sinnvoll ist. Die Resultate der Proben mit Metalloberfläche sind nicht repräsentativ. Es kann kein Trend zur Ablösezeit in Abhängigkeit der Leistung abgeleitet werden. Die Verbindung des Stoffs zur Oberfläche ist von Versuch zu Versuch anders. Etwas besser sieht es bei der Probe mit Karbonoberfläche aus. Auch deren Ablösezeit ist durch die Qualität der Eisverbindung beeinflusst. Es lässt sich aber ein klareren Trend interpretieren.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Energieversuch}
+\caption{Ablösezeit in Abhängigkeit der Heizleistung bei Raumtemperatur und in der Klimakammer mit der Probe mit Karbonoberfläche}
+\end{figure}
 
-\section{Versuch zur Eisbildung}
+Darauf lässt sich eine grobe Abschätzung zur nötigen Energie machen. Ab 4\(\frac{W}{cm^2}\) in der Klimakammer sinkt die Ablösezeit nicht mehr markant. Aufgerechnet auf die ermittelten Vereisungszonen am Heckrotor (\ref{eisresultate}) ergibt sich daraus eine Leistung von 912W (\ref{eq:PHeck})
+
+\begin{equation}
+\begin{array}{c}
+P_{Heckrotor} = (60cm*1.2cm + 60cm*2.6cm)*4\frac{W}{cm^2} = 912W\\
+\label{eq:PHeck}
+\text{Abschätzung zur nötigen Leistung am Heckrotor}
+\end{array}
+\end{equation}
+
+
+\section{Versuch zur Eisbildung}\label{Eisbildung}
 \subsection{Versuchsaufbau}
-In der Klimakammer soll durch besprühen mit Wasser Eis am drehenden Rotor ansetzen. Bei -10°C und einer relativen Luftfeuchtigkeit im Bereich von rund 80 \% dreht der Rotor mit rund 5000 \(\frac{1}{min}\). Eine Düse zerstäubt Wasser zu Nebel. Eine Datenlogger zeichnet Die Luftfeucht und die Lufttemperatur nahe dem Rotor auf. Ein Kamera zeichnet das Rotorblatt auf. Zusätzliche Eindrücke gibt eine Wärmebildkamera.
-\subsection{Resultat}
-Auf den Bildern der optischen Kamera lässt sich lediglich das Einsetzen des Nebels erkennen. Der Rotor dreht zu schnell und ist auf den Bildern verschwommen. Auf den Bildern der Wärmebildkamera ist mangels Kontrast auch nicht zu erkennen. Eine HighSpeed Kamera würde die Auswertung zukünftiger Versuche begünstigen.
-Die Eisbildung erfolgt unmittelbar nach dem einschalten des Wasser. Die Stromversorgung des Rotorantrieb läuft augenblicklich in die Strombegrenzung und die Drehzahl fällt auf rund 4000\(\frac{1}{min}\).
-Das Eis setzt fast ausschliesslich and der Vorderkant in Drehrichtung an. Auf der Vorderseite (in Richtung Düse) ist die Eisschicht bis ca. 12mm von der Kante nach hinten. Auf der Hinterseite (von der Düse abgewandt) ragt die Eisschicht bis 26mm von der Kante weg.
+In der Klimakammer soll durch Besprühen mit Wasser Eis am drehenden Rotor ansetzen. Bei -10°C und einer relativen Luftfeuchtigkeit im Bereich von rund 80\% dreht der Rotor mit rund 5000 \(\frac{1}{min}\). Eine Düse zerstäubt Wasser zu Nebel. Der Datenlogger zeichnet die relative Luftfeuchtigkeit und die Lufttemperatur nahe dem Rotor auf. Eine Kamera zeichnet das Rotorblatt auf. Zusätzliche Eindrücke gibt eine Wärmebildkamera.
+\begin{figure}[H]
+\centering
+\includegraphics[trim = 0mm 150mm 145mm 83mm,clip,width =0.7\textwidth]{Eisbildung.pdf}
+\caption{Darstellung des Versuchsaufbau zur Rotorblattvereisung}
+\end{figure}
+\newpage
+\subsection{Resultat}\label{eisresultate} 
+Auf den Bildern der optischen Kamera lässt sich lediglich das Einsetzen des Nebels erkennen. Der Rotor dreht zu schnell und ist auf den Bildern verschwommen. Auf den Bildern der Wärmebildkamera ist mangels Kontrast auch nichts zu erkennen. Eine HighSpeed Kamera würde die Auswertung zukünftiger Versuche begünstigen.
+Die Eisbildung erfolgt unmittelbar nach dem Einschalten des Wasserszerstäubers. Die Stromversorgung des Rotorantriebs läuft augenblicklich in die Strombegrenzung und die Drehzahl fällt auf rund 4000\(\frac{1}{min}\).
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Drehzahl}
+\caption{Verlauf der Drehzahl mit Einsetzen der Vereisung bei 0s}
+\end{figure}
+
+Das Eis setzt fast ausschliesslich an der Vorderkante in Drehrichtung an. Auf der Vorderseite (in Richtung Düse) ist die Eisschicht bis ca. 12mm von der Kante nach hinten. Auf der Hinterseite (von der Düse abgewandt) ragt die Eisschicht bis 26mm von der Kante weg.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.49\textwidth]{P1140082}
+\includegraphics[width=0.49\textwidth]{P1140084}
+\caption{Vereisung des Rottorblatts Vorderseite(l) und Rückseite(r)}
+\end{figure}
+
+Der SHT71 Sensor detektiert die Einschaltzeitpunkt des Zerstäubers auch nach dem er mit einer Eisschicht überzogen ist. Im ersten Verlauf(\ref{Vereisung1}) sind zwei Einschaltungen zu sehen.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Versuch1.eps}
+\caption{Verlauf der relativen Luftfeuchtigkeit(l) und der Lufttemperatur(r) bei zu Beginn unvereistem Sensor}\label{Vereisung1}
+
+\includegraphics[width=1\textwidth]{Vereisung3.eps}
+\caption{Verlauf der relativen Luftfeuchtigkeit(l) und der Lufttemperatur(r) bei vereistem Sensor}
+\end{figure}
+In beiden Fällen ist das einsetzten des Wassernebel an der Temperatur gut zu erkennen. Da das Wasser in der Luft wärmer ist als die Umgebung steigt die gemessene Temperatur. Die relative Feuchte ist zwar nach der Vereisung des Sensors bereits auf 97\%, springt jedoch nach der Einschaltung auf über 100\%.
+\newpage
+\section{Ausstehender Versuch}
+Mangels Zeit bleibt ein Versuch zur Enteisung ausstehend. Rotorblätter mit integrierter Heizung konnten nicht vor Ende der Arbeit fertig gestellt werden. Mit den Erkenntnissen aus den beiden genannten Versuchen müsste nun der Vereisungsversuch (siehe \ref{Eisbildung}) mit im Rotor integriert Heizung durchgeführt werden. Das Ziel dabei ist, optimale Werte für das PWM duty cycle, die aktive- und die inaktive Zeit der Heizung für ein de-icing zu ermitteln. Die Spannung an der Leistungsendstufe lässt sich dabei direkt an die 25V Versorgung des Prüfstands koppeln. Eine Aufzeichnung der Motorenleistung könnte direkten Aufschluss geben, wie erfolgreich die Enteisung ist.
